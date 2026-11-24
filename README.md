@@ -2,7 +2,7 @@
 
 [![Licencia MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-![Traductor de voz para reuniones en Windows más Azure, versión 4](docs/captura-v4.png)
+![Traductor de voz para reuniones en Windows más Azure, 1.0.4](docs/captura-v4.png)
 
 ## Por qué lo hice
 
@@ -15,29 +15,29 @@ Armé este traductor para eso, con **Azure AI Foundry**. Virtual Audio Cable hac
 - **Funciona en Windows con cualquier app de videollamada:** Teams, Zoom, Google Meet, WhatsApp o la que uses, sin depender de una plataforma en particular.
 - **Traduce en las dos direcciones:** tu voz sale traducida hacia la reunión, y lo que dicen los demás te llega traducido a los auriculares.
 - **Usa Azure AI Foundry:** Azure AI Speech y GPT Realtime Translate; podés elegir cuál usar en cada dirección.
-- **De fábrica, español ⇄ inglés.** Esta es la primera versión pública; el soporte multi-idioma llega en próximas versiones. Si querés experimentar, Azure AI Speech ya acepta otros códigos BCP-47.
+- **De fábrica, español ⇄ inglés.** Esta es la primera versión pública, 1.0.4; el soporte multi-idioma llega en próximas versiones. Si querés experimentar, Azure AI Speech ya acepta otros códigos BCP-47.
 
-Esta es la primera versión pública y la comparto abierta porque creo que le puede servir mucho a la comunidad. Si lo usás, si encontrás un error o se te ocurre una mejora, abrí un issue: me encantaría saber cómo te funciona.
+Esta es la primera versión pública, 1.0.4, y la comparto abierta porque creo que le puede servir mucho a la comunidad. Si lo usás, si encontrás un error o se te ocurre una mejora, abrí un issue: me encantaría saber cómo te funciona.
 
 — Eber Perez, Cloud & AI Architect · Microsoft Certified Trainer
 
 ---
 
-Aplicación de escritorio para Windows, basada en **Azure AI Foundry**, que traduce tu voz en vivo hacia la reunión y el audio de la reunión hacia tus auriculares. Funciona con Teams, Google Meet, Zoom y otras plataformas que permitan configurar el micrófono y el altavoz. De fábrica traduce español ⇄ inglés en las dos direcciones. Esta es la primera versión pública; el soporte multi-idioma llega en próximas versiones. Si querés experimentar, Azure AI Speech ya acepta otros códigos BCP-47. Solo el audio ya traducido de tu micrófono se envía al cable de salida hacia la reunión.
+Aplicación de escritorio para Windows, basada en **Azure AI Foundry**, que traduce tu voz en vivo hacia la reunión y el audio de la reunión hacia tus auriculares. Funciona con Teams, Google Meet, Zoom y otras plataformas que permitan configurar el micrófono y el altavoz. De fábrica traduce español ⇄ inglés en las dos direcciones. Esta es la primera versión pública, 1.0.4; el soporte multi-idioma llega en próximas versiones. Si querés experimentar, Azure AI Speech ya acepta otros códigos BCP-47. Solo el audio ya traducido de tu micrófono se envía al cable de salida hacia la reunión.
 
-En esta primera versión pública podés elegir **Azure AI Speech** o **GPT Realtime Translate** (ambos de Azure AI Foundry) de forma independiente para cada dirección, sin cambiar dispositivos ni volver a ingresar claves guardadas.
+En esta primera versión pública, 1.0.4, podés elegir **Azure AI Speech** o **GPT Realtime Translate** (ambos de Azure AI Foundry) de forma independiente para cada dirección, sin cambiar dispositivos ni volver a ingresar claves guardadas.
 
-[Descargar la versión 4](https://github.com/eberd1977-blip/traductor-de-voz-para-reuniones-windows-azure/releases/tag/v4.0.0) · [Notas de versión](RELEASE-NOTES.md)
+[Descargar la 1.0.4](https://github.com/eberd1977-blip/traductor-de-voz-para-reuniones-windows-azure/releases/tag/v4.0.0) · [Notas de versión](RELEASE-NOTES.md)
 
-## Inicio rápido: versión 4
+## Inicio rápido: 1.0.4
 
-1. Instala **.NET Desktop Runtime 10 x64** (no solo el runtime de consola), el redistribuible **Visual C++ x64** y el controlador de audio virtual. Descarga el ZIP de la versión 4, extrae **todos** los archivos a una carpeta nueva y abre `TraductorVozTeams.exe`. No sobrescribas la versión anterior.
+1. Instala **.NET Desktop Runtime 10 x64** (no solo el runtime de consola), el redistribuible **Visual C++ x64** y el controlador de audio virtual. Descarga el ZIP de la 1.0.4, extrae **todos** los archivos a una carpeta nueva y abre `TraductorVozTeams.exe`. No sobrescribas la versión anterior.
 2. En **Configurar proveedores y credenciales…**, crea o reutiliza un perfil de [Azure AI Speech](#1-azure-ai-speech) o de [GPT Realtime Translate](#etapa-3-configurar-y-verificar-gpt). Para GPT, usa el endpoint HTTPS del recurso Foundry, el nombre del despliegue y su clave. La prueba de conexión no sustituye la verificación de voz con muestras integradas, requerida antes de usar ese perfil en reuniones. Las pruebas en línea pueden generar consumo.
 3. En **Mi voz → reunión** y **Reunión → mis auriculares**, elige el perfil de cada dirección. Puedes usar el mismo o combinar proveedores. Para cambiar un selector, detén solo su dirección; para editar perfiles o claves, detén ambas.
 4. Si el audio ya funciona, conserva los dispositivos existentes. Si lo configuras de cero, usa un cable para enviar tu inglés a la reunión (la plataforma lo toma como **micrófono**) y otro cable para recibir a los participantes (la plataforma lo usa como **altavoz**). Elige auriculares físicos para escuchar. Consulta [el recorrido y la prueba de cables](#etapa-2-escuchar-la-reunión-en-español) y [los ajustes de la plataforma](#configurar-la-plataforma-de-reunión).
 5. Fuera de una llamada, comprueba los cables. Luego inicia las direcciones que necesites. Si falla un proveedor no se cambia a otro automáticamente. No envíes audio de participantes sin la autorización que corresponda: cada dirección activa envía su audio al proveedor elegido.
 
-Para actualizar, usa la misma cuenta de Windows: la app lee `%LOCALAPPDATA%\TraductorVozTeams\settings.json` y las claves cifradas con DPAPI desde `secrets\`. Si la configuración anterior no distingue direcciones, ambas empiezan con el perfil anterior. Para volver a la versión previa a la 4, cierra la nueva y abre el ejecutable anterior: lee la selección saliente como perfil compartido. Guarda antes una copia de `settings.json` si quieres preservar la selección independiente al volver a la 4, ya que el ejecutable anterior puede omitirla al guardar. No borres `secrets\`.
+Para actualizar, usa la misma cuenta de Windows: la app lee `%LOCALAPPDATA%\TraductorVozTeams\settings.json` y las claves cifradas con DPAPI desde `secrets\`. Si la configuración anterior no distingue direcciones, ambas empiezan con el perfil anterior. Para volver a la versión previa a la 1.0.4, cierra la nueva y abre el ejecutable anterior: lee la selección saliente como perfil compartido. Guarda antes una copia de `settings.json` si quieres preservar la selección independiente al volver a la 1.0.4, ya que el ejecutable anterior puede omitirla al guardar. No borres `secrets\`.
 
 ## Recorrido del audio: ejemplo con Azure AI Speech
 
@@ -195,7 +195,7 @@ Mientras la plataforma use `Line 1` como altavoz, **no oirás la reunión** si B
 
 ## Entrega: aplicación portable
 
-**Descargas oficiales de la versión 4:** el ZIP de GitHub Releases requiere [.NET Desktop Runtime 10 x64](https://dotnet.microsoft.com/es-es/download/dotnet/10.0). Extrae y conserva toda la carpeta. La tabla y el script siguientes también describen otras modalidades de compilación local.
+**Descargas oficiales de la 1.0.4:** el ZIP de GitHub Releases requiere [.NET Desktop Runtime 10 x64](https://dotnet.microsoft.com/es-es/download/dotnet/10.0). Extrae y conserva toda la carpeta. La tabla y el script siguientes también describen otras modalidades de compilación local.
 
 | Elemento | Ubicación |
 |---|---|
@@ -205,7 +205,7 @@ Mientras la plataforma use `Line 1` como altavoz, **no oirás la reunión** si B
 | Instalación opcional para el usuario actual (`-Install`) | `%LOCALAPPDATA%\Programs\TraductorVozTeams\TraductorVozTeams.exe` + accesos directos en el Escritorio y el menú Inicio |
 | Configuración, credenciales cifradas, registros y métricas (**fuera del ejecutable**) | `%LOCALAPPDATA%\TraductorVozTeams\` (`settings.json`, `secrets\`, `logs\`, `metrics\`) |
 
-No hay instalador MSI ni MSIX. Para la versión 4, extrae el ZIP completo y abre el `.exe` desde esa carpeta. El botón **Crear accesos directos** de la ventana principal crea accesos al `.exe` desde donde esté. Para desinstalar, borra la carpeta de la aplicación y sus accesos directos. Conserva `%LOCALAPPDATA%\TraductorVozTeams` si quieres seguir usando tu configuración y credenciales con otra versión.
+No hay instalador MSI ni MSIX. Para la 1.0.4, extrae el ZIP completo y abre el `.exe` desde esa carpeta. El botón **Crear accesos directos** de la ventana principal crea accesos al `.exe` desde donde esté. Para desinstalar, borra la carpeta de la aplicación y sus accesos directos. Conserva `%LOCALAPPDATA%\TraductorVozTeams` si quieres seguir usando tu configuración y credenciales con otra versión.
 
 ### Requisitos para ejecutar
 
@@ -213,7 +213,7 @@ No hay instalador MSI ni MSIX. Para la versión 4, extrae el ZIP completo y abre
 - [Microsoft Visual C++ Redistributable x64 2015-2022](https://aka.ms/vs/17/release/vc_redist.x64.exe). La app avisa si no lo detecta.
 - Virtual Audio Cable instalado.
 - Conexión a Internet y un recurso de Azure AI Speech o un despliegue de GPT Realtime Translate en Microsoft Foundry, según los perfiles que quieras usar.
-- Instala .NET Desktop Runtime 10 x64 para el ZIP de la versión 4. Solo la compilación autocontenida generada por el script local trae el runtime incluido.
+- Instala .NET Desktop Runtime 10 x64 para el ZIP de la 1.0.4. Solo la compilación autocontenida generada por el script local trae el runtime incluido.
 - **Control inteligente de aplicaciones (Smart App Control)**: en este equipo está en modo de aplicación y, durante el desarrollo, bloqueó una compilación nueva sin firmar (`0x800711C7`, "Una directiva de Control de aplicaciones bloqueó este archivo"), mientras que otras compilaciones sí se ejecutaron. El ejecutable no está firmado; si Windows lo bloquea, la solución estable es firmarlo con un certificado de firma de código de confianza. Desactivar Smart App Control es una decisión de seguridad tuya y no se puede revertir sin reinstalar Windows.
 
 ### Requisitos para compilar
@@ -230,7 +230,7 @@ Autodiagnóstico sin credenciales ni red: `TraductorVozTeams.exe --selftest info
 
 El autodiagnóstico también inicia y cierra dos sesiones locales desde un hilo STA, como la ventana WPF, con salida y monitor silenciados y un cambio de formato de audio. El micrófono se lee solo para contar bytes: no se guarda ni se envía al proveedor.
 
-**Corrección de inicio (2026-11-17):** el error `IMMDevice / E_NOINTERFACE (0x80004002)` al pulsar **Iniciar** se debía a crear los dispositivos COM de audio en el hilo STA de la ventana y utilizarlos después desde MTA tras una espera asíncrona. La sesión crea, detiene y libera ahora los dispositivos en MTA. La versión 4 incluye esta corrección.
+**Corrección de inicio (2026-11-17):** el error `IMMDevice / E_NOINTERFACE (0x80004002)` al pulsar **Iniciar** se debía a crear los dispositivos COM de audio en el hilo STA de la ventana y utilizarlos después desde MTA tras una espera asíncrona. La sesión crea, detiene y libera ahora los dispositivos en MTA. La 1.0.4 incluye esta corrección.
 
 **Corrección de audio duplicado:** el inicio y cierre de sesiones se serializan. Pulsar **Detener** varias veces, reiniciar durante el cierre o cerrar la ventana no puede dejar un micrófono/proveedor anterior activo mientras se inicia otro. Los eventos tardíos de una sesión anterior tampoco se muestran ni detienen una sesión nueva. No se eliminan frases iguales por texto: si repites una frase de verdad, ambas se traducen. Si usas monitor, utiliza auriculares para evitar que el micrófono vuelva a captar la voz reproducida.
 
@@ -420,7 +420,7 @@ Con autorización y presupuesto acordado, ejecuta cada proveedor con A sola, B s
 
 ### Volver a la versión anterior
 
-Para volver a Speech sin cambiar de versión, detén la dirección afectada y selecciona su perfil. Para volver de la versión 4 a la etapa 3, sigue las indicaciones de [inicio rápido](#inicio-rápido-versión-4): no hace falta restaurar un respaldo de esquema 2. Si necesitas volver a la etapa 2, cierra la app, copia el `settings.json` actual y restaura `settings.v2.backup.json` como `settings.json` si existe. Ese respaldo se creó al migrar del esquema 2; no se genera en todas las instalaciones. En ambos casos conserva el directorio `secrets` intacto y abre la versión anterior con el mismo usuario de Windows.
+Para volver a Speech sin cambiar de versión, detén la dirección afectada y selecciona su perfil. Para volver de la 1.0.4 a la etapa 3, sigue las indicaciones de [inicio rápido](#inicio-rápido-104): no hace falta restaurar un respaldo de esquema 2. Si necesitas volver a la etapa 2, cierra la app, copia el `settings.json` actual y restaura `settings.v2.backup.json` como `settings.json` si existe. Ese respaldo se creó al migrar del esquema 2; no se genera en todas las instalaciones. En ambos casos conserva el directorio `secrets` intacto y abre la versión anterior con el mismo usuario de Windows.
 
 ## Estructura
 
