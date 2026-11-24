@@ -4,6 +4,8 @@
 
 ![Traductor de voz para reuniones en Windows más Azure, 1.0.4](docs/captura-v4.png)
 
+🎬 [Ver el video de la demo](docs/demo-traductor.mp4): animación de 18 s que muestra cómo funciona.
+
 ## Por qué lo hice
 
 Conozco a un montón de profesionales excelentes que se quedan callados en una reunión, o que ni se anotan a un desafío nuevo, por la barrera del idioma. No es falta de capacidad: es no poder mantener una conversación fluida en otra lengua.
