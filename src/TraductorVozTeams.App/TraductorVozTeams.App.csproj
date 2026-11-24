@@ -11,7 +11,9 @@
     <RootNamespace>TraductorVozTeams.App</RootNamespace>
     <Product>Traductor de voz para reuniones en Windows más Azure</Product>
     <AssemblyTitle>Traductor de voz para reuniones en Windows más Azure</AssemblyTitle>
-    <Version>4.0.0</Version>
+    <Version>1.0.4</Version>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.4.0</FileVersion>
     <!-- El Speech SDK en Windows requiere 64 bits. -->
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <PlatformTarget>x64</PlatformTarget>

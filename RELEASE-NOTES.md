@@ -1,4 +1,6 @@
-# Versión 4.0.0 — Un proveedor por dirección
+# 1.0.4 — Primera versión pública
+
+Esta es la primera versión pública del traductor de voz para reuniones en Windows más Azure.
 
 - **Mi voz → reunión:** elige el perfil que traduce de español a inglés.
 - **Reunión → mis auriculares:** elige el perfil que traduce de inglés a español.
@@ -9,7 +11,7 @@
 
 Extrae el ZIP completo en una carpeta nueva y abre `TraductorVozTeams.exe`. Requiere Windows 11 x64, .NET Desktop Runtime 10 x64 instalado por separado y Visual C++ Redistributable x64. No incluye credenciales, configuración personal ni controladores de audio.
 
-La [guía de configuración y funcionamiento](https://github.com/eberd1977-blip/traductor-de-voz-para-reuniones-windows-azure/blob/v4.0.0/README.md#inicio-rápido-versión-4) explica los perfiles Speech y GPT, la verificación GPT sin archivos WAV, los dos cables virtuales, los ajustes de Teams/Meet/Zoom y cómo volver a la versión anterior.
+La [guía de configuración y funcionamiento](https://github.com/eberd1977-blip/traductor-de-voz-para-reuniones-windows-azure/blob/main/README.md#inicio-rápido-104) explica los perfiles Speech y GPT, la verificación GPT sin archivos WAV, los dos cables virtuales, los ajustes de Teams/Meet/Zoom y cómo volver a una versión anterior.
 
 ## Validación y límites
 

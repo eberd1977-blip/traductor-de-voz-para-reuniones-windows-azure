@@ -2,7 +2,7 @@
 
 [![Licencia MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-![Traductor de voz para reuniones en Windows más Azure, 1.0.4](docs/captura-v4.png)
+![Traductor de voz para reuniones en Windows más Azure, 1.0.4](docs/captura.png)
 
 🎬 [Ver el video de la demo](docs/demo-traductor.mp4): animación de 18 s que muestra cómo funciona.
 
@@ -29,7 +29,7 @@ Aplicación de escritorio para Windows, basada en **Azure AI Foundry**, que trad
 
 En esta primera versión pública, 1.0.4, podés elegir **Azure AI Speech** o **GPT Realtime Translate** (ambos de Azure AI Foundry) de forma independiente para cada dirección, sin cambiar dispositivos ni volver a ingresar claves guardadas.
 
-[Descargar la 1.0.4](https://github.com/eberd1977-blip/traductor-de-voz-para-reuniones-windows-azure/releases/tag/v4.0.0) · [Notas de versión](RELEASE-NOTES.md)
+[Descargar la 1.0.4](https://github.com/eberd1977-blip/traductor-de-voz-para-reuniones-windows-azure/releases/tag/v1.0.4) · [Notas de versión](RELEASE-NOTES.md)
 
 ## Inicio rápido: 1.0.4
 
