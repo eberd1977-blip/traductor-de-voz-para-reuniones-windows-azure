@@ -115,7 +115,7 @@ public static class LatencyBenchmark
         var report = new StringBuilder();
         var ok = true;
 
-        report.AppendLine("Prueba de demora - Traductor de voz para Teams");
+        report.AppendLine("Prueba de demora - Traductor de voz para reuniones en Windows más Azure");
         report.AppendLine($"Fecha local: {DateTime.Now:yyyy-MM-dd HH:mm:ss zzz}");
         report.AppendLine($"Ejecutable: {Environment.ProcessPath} ({typeof(LatencyBenchmark).Assembly.GetName().Version})");
         report.AppendLine($"SO: {Environment.OSVersion.VersionString}; equipo: {Environment.MachineName}");

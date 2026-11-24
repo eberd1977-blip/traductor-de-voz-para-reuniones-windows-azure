@@ -60,11 +60,11 @@ if ($Install) {
     $installedExe = Join-Path $installDir 'TraductorVozTeams.exe'
     $shell = New-Object -ComObject WScript.Shell
     foreach ($folder in @([Environment]::GetFolderPath('DesktopDirectory'), [Environment]::GetFolderPath('Programs'))) {
-        $shortcut = $shell.CreateShortcut((Join-Path $folder 'Traductor de voz para Teams.lnk'))
+        $shortcut = $shell.CreateShortcut((Join-Path $folder 'Traductor de voz para reuniones en Windows más Azure.lnk'))
         $shortcut.TargetPath = $installedExe
         $shortcut.WorkingDirectory = $installDir
         $shortcut.IconLocation = "$installedExe,0"
-        $shortcut.Description = 'Traduccion de voz de espanol a ingles hacia Teams'
+        $shortcut.Description = 'Traductor de voz para reuniones en Windows más Azure'
         $shortcut.Save()
     }
     Write-Host "Instalado en: $installedExe (accesos directos en Escritorio y menu Inicio)"

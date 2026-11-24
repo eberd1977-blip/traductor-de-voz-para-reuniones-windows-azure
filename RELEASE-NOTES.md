@@ -9,7 +9,7 @@
 
 Extrae el ZIP completo en una carpeta nueva y abre `TraductorVozTeams.exe`. Requiere Windows 11 x64, .NET Desktop Runtime 10 x64 instalado por separado y Visual C++ Redistributable x64. No incluye credenciales, configuración personal ni controladores de audio.
 
-La [guía de configuración y funcionamiento](https://github.com/eberd1977-blip/traductor-de-voz-para-reuniones-espanol-ingles/blob/v4.0.0/README.md#inicio-rápido-versión-4) explica los perfiles Speech y GPT, la verificación GPT sin archivos WAV, los dos cables virtuales, los ajustes de Teams/Meet/Zoom y cómo volver a la versión anterior.
+La [guía de configuración y funcionamiento](https://github.com/eberd1977-blip/traductor-de-voz-para-reuniones-windows-azure/blob/v4.0.0/README.md#inicio-rápido-versión-4) explica los perfiles Speech y GPT, la verificación GPT sin archivos WAV, los dos cables virtuales, los ajustes de Teams/Meet/Zoom y cómo volver a la versión anterior.
 
 ## Validación y límites
 

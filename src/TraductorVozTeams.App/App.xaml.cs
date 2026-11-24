@@ -61,7 +61,7 @@ public partial class App : Application
         }
         catch (Exception ex)
         {
-            MessageBox.Show("No se pudo cargar la configuración: " + ex.Message, "Traductor de voz para Teams",
+            MessageBox.Show("No se pudo cargar la configuración: " + ex.Message, "Traductor de voz para reuniones en Windows más Azure",
                 MessageBoxButton.OK, MessageBoxImage.Error);
             Shutdown(1);
             return;
@@ -89,7 +89,7 @@ public partial class App : Application
     private void OnUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
     {
         _services?.Logger.Error("Excepción no controlada", e.Exception);
-        MessageBox.Show("Error inesperado: " + e.Exception.Message, "Traductor de voz para Teams",
+        MessageBox.Show("Error inesperado: " + e.Exception.Message, "Traductor de voz para reuniones en Windows más Azure",
             MessageBoxButton.OK, MessageBoxImage.Error);
         e.Handled = true;
     }

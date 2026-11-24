@@ -9,7 +9,8 @@
     <UseWPF>true</UseWPF>
     <AssemblyName>TraductorVozTeams</AssemblyName>
     <RootNamespace>TraductorVozTeams.App</RootNamespace>
-    <Product>Traductor de voz para Teams</Product>
+    <Product>Traductor de voz para reuniones en Windows más Azure</Product>
+    <AssemblyTitle>Traductor de voz para reuniones en Windows más Azure</AssemblyTitle>
     <Version>4.0.0</Version>
     <!-- El Speech SDK en Windows requiere 64 bits. -->
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>

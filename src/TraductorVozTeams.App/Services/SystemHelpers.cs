@@ -36,12 +36,12 @@ public static class SystemHelpers
         var created = new List<string>();
         foreach (var folder in targets)
         {
-            var path = Path.Combine(folder, "Traductor de voz para Teams.lnk");
+            var path = Path.Combine(folder, "Traductor de voz para reuniones en Windows más Azure.lnk");
             dynamic shortcut = shell.CreateShortcut(path);
             shortcut.TargetPath = exe;
             shortcut.WorkingDirectory = Path.GetDirectoryName(exe);
             shortcut.IconLocation = exe + ",0";
-            shortcut.Description = "Traducción de voz español → inglés hacia Teams";
+            shortcut.Description = "Traductor de voz para reuniones en Windows más Azure";
             shortcut.Save();
             created.Add(path);
         }

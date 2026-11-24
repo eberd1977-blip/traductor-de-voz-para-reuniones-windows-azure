@@ -1,17 +1,19 @@
-# Traductor de voz para reuniones (español ⇄ inglés)
+# Traductor de voz para reuniones en Windows más Azure
 
-![Traductor de voz para reuniones, versión 4](docs/captura-v4.png)
+![Traductor de voz para reuniones en Windows más Azure, versión 4](docs/captura-v4.png)
 
 ## Por qué lo hice
 
-Conozco muchísimos profesionales que son muy buenos en lo que hacen, pero que en una reunión en inglés pierden fluidez y se quedan callados aunque tengan algo valioso para aportar. No es falta de capacidad técnica: es el idioma. Armé este traductor para sacarle ese obstáculo a cualquiera que lo necesite.
+Conozco a un montón de profesionales excelentes que se quedan callados en una reunión, o que ni se anotan a un desafío nuevo, por la barrera del idioma. No es falta de capacidad: es no poder mantener una conversación fluida en otra lengua.
 
-La idea es que sea simple:
+La traducción en tiempo real ya existe, pero nadie la acercó de forma simple, compatible con cualquier app de videollamada (Teams, Zoom, Meet o la que uses) para que la charla siga sin cortes.
+
+Armé este traductor para eso, con **Azure AI Foundry**. Virtual Audio Cable hace de puente: un cable virtual lleva tu voz traducida a la reunión y trae el audio de la reunión a tus auriculares.
 
 - **Funciona en Windows con cualquier app de videollamada:** Teams, Zoom, Google Meet, WhatsApp o la que uses, sin depender de una plataforma en particular.
-- **Traduce en las dos direcciones:** tu voz en español sale en inglés hacia la reunión, y lo que dicen los demás en inglés te llega en español a los auriculares.
-- **Usa servicios de Microsoft Foundry:** Azure AI Speech y GPT Realtime Translate, y podés elegir cuál usar en cada dirección.
-- **Virtual Audio Cable hace de puente:** un cable virtual en tu equipo lleva el audio traducido a la reunión y trae el de la reunión a la app.
+- **Traduce en las dos direcciones:** tu voz sale traducida hacia la reunión, y lo que dicen los demás te llega traducido a los auriculares.
+- **Usa Azure AI Foundry:** Azure AI Speech y GPT Realtime Translate; podés elegir cuál usar en cada dirección.
+- **De fábrica, español ⇄ inglés; con Speech, también otros idiomas.** Los campos de idioma de origen son editables (código BCP-47). Con Azure AI Speech podés apuntar a otro idioma destino. GPT Realtime, en esta versión, traduce entre español e inglés.
 
 Va por la **versión 4** y lo comparto abierto porque creo que le puede servir mucho a la comunidad. Si lo usás, si encontrás un error o se te ocurre una mejora, abrí un issue: me encantaría saber cómo te funciona.
 
@@ -19,12 +21,11 @@ Va por la **versión 4** y lo comparto abierto porque creo que le puede servir m
 
 ---
 
+Aplicación de escritorio para Windows, basada en **Azure AI Foundry**, que traduce tu voz en vivo hacia la reunión y el audio de la reunión hacia tus auriculares. Funciona con Teams, Google Meet, Zoom y otras plataformas que permitan configurar el micrófono y el altavoz. De fábrica traduce español ⇄ inglés en las dos direcciones; con Azure AI Speech podés indicar otros idiomas (código BCP-47). Solo el audio ya traducido de tu micrófono se envía al cable de salida hacia la reunión.
 
-Aplicación de escritorio para Windows que traduce tu voz del español al inglés para la reunión y el audio de la reunión del inglés al español para tus auriculares. Funciona con Teams, Google Meet, Zoom y otras plataformas que permitan configurar el micrófono y el altavoz. Solo el inglés traducido de tu micrófono se envía al cable de salida hacia la reunión.
+**Versión 4:** podés elegir **Azure AI Speech** o **GPT Realtime Translate** (ambos de Azure AI Foundry) de forma independiente para cada dirección, sin cambiar dispositivos ni volver a ingresar claves guardadas.
 
-**Versión 4:** puedes elegir **Azure AI Speech** o **GPT Realtime Translate** de forma independiente para cada dirección, sin cambiar dispositivos ni volver a ingresar claves guardadas.
-
-[Descargar la versión 4](https://github.com/eberd1977-blip/traductor-de-voz-para-reuniones-espanol-ingles/releases/tag/v4.0.0) · [Notas de versión](RELEASE-NOTES.md)
+[Descargar la versión 4](https://github.com/eberd1977-blip/traductor-de-voz-para-reuniones-windows-azure/releases/tag/v4.0.0) · [Notas de versión](RELEASE-NOTES.md)
 
 ## Inicio rápido: versión 4
 
@@ -421,8 +422,10 @@ Para volver a Speech sin cambiar de versión, detén la dirección afectada y se
 
 ## Estructura
 
+Esta app usa **Azure AI Foundry**: Azure AI Speech y GPT Realtime Translate.
+
 - `src\TraductorVozTeams.Core`: lógica sin UI (descriptores de proveedores, perfiles, almacén cifrado DPAPI, validación anti-bucle, métricas, parser WAV).
-- `src\TraductorVozTeams.App`: WPF, captura y salidas de audio con NAudio (WASAPI), adaptador de Azure AI Speech y autodiagnóstico.
+- `src\TraductorVozTeams.App`: WPF, captura y salidas de audio con NAudio (WASAPI), adaptadores de Azure AI Foundry (Azure AI Speech y GPT Realtime) y autodiagnóstico.
 - `tests\TraductorVozTeams.Tests`: pruebas xUnit.
 - `scripts\publish.ps1`: publicación portable, ZIP e instalación opcional.
 
