@@ -1,5 +1,7 @@
 # Traductor de voz para reuniones en Windows más Azure
 
+[![Licencia MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 ![Traductor de voz para reuniones en Windows más Azure, versión 4](docs/captura-v4.png)
 
 ## Por qué lo hice
@@ -13,17 +15,17 @@ Armé este traductor para eso, con **Azure AI Foundry**. Virtual Audio Cable hac
 - **Funciona en Windows con cualquier app de videollamada:** Teams, Zoom, Google Meet, WhatsApp o la que uses, sin depender de una plataforma en particular.
 - **Traduce en las dos direcciones:** tu voz sale traducida hacia la reunión, y lo que dicen los demás te llega traducido a los auriculares.
 - **Usa Azure AI Foundry:** Azure AI Speech y GPT Realtime Translate; podés elegir cuál usar en cada dirección.
-- **De fábrica, español ⇄ inglés; con Speech, también otros idiomas.** Los campos de idioma de origen son editables (código BCP-47). Con Azure AI Speech podés apuntar a otro idioma destino. GPT Realtime, en esta versión, traduce entre español e inglés.
+- **De fábrica, español ⇄ inglés.** Esta es la primera versión pública; el soporte multi-idioma llega en próximas versiones. Si querés experimentar, Azure AI Speech ya acepta otros códigos BCP-47.
 
-Va por la **versión 4** y lo comparto abierto porque creo que le puede servir mucho a la comunidad. Si lo usás, si encontrás un error o se te ocurre una mejora, abrí un issue: me encantaría saber cómo te funciona.
+Esta es la primera versión pública y la comparto abierta porque creo que le puede servir mucho a la comunidad. Si lo usás, si encontrás un error o se te ocurre una mejora, abrí un issue: me encantaría saber cómo te funciona.
 
 — Eber Perez, Cloud & AI Architect · Microsoft Certified Trainer
 
 ---
 
-Aplicación de escritorio para Windows, basada en **Azure AI Foundry**, que traduce tu voz en vivo hacia la reunión y el audio de la reunión hacia tus auriculares. Funciona con Teams, Google Meet, Zoom y otras plataformas que permitan configurar el micrófono y el altavoz. De fábrica traduce español ⇄ inglés en las dos direcciones; con Azure AI Speech podés indicar otros idiomas (código BCP-47). Solo el audio ya traducido de tu micrófono se envía al cable de salida hacia la reunión.
+Aplicación de escritorio para Windows, basada en **Azure AI Foundry**, que traduce tu voz en vivo hacia la reunión y el audio de la reunión hacia tus auriculares. Funciona con Teams, Google Meet, Zoom y otras plataformas que permitan configurar el micrófono y el altavoz. De fábrica traduce español ⇄ inglés en las dos direcciones. Esta es la primera versión pública; el soporte multi-idioma llega en próximas versiones. Si querés experimentar, Azure AI Speech ya acepta otros códigos BCP-47. Solo el audio ya traducido de tu micrófono se envía al cable de salida hacia la reunión.
 
-**Versión 4:** podés elegir **Azure AI Speech** o **GPT Realtime Translate** (ambos de Azure AI Foundry) de forma independiente para cada dirección, sin cambiar dispositivos ni volver a ingresar claves guardadas.
+En esta primera versión pública podés elegir **Azure AI Speech** o **GPT Realtime Translate** (ambos de Azure AI Foundry) de forma independiente para cada dirección, sin cambiar dispositivos ni volver a ingresar claves guardadas.
 
 [Descargar la versión 4](https://github.com/eberd1977-blip/traductor-de-voz-para-reuniones-windows-azure/releases/tag/v4.0.0) · [Notas de versión](RELEASE-NOTES.md)
 
@@ -434,3 +436,14 @@ Esta app usa **Azure AI Foundry**: Azure AI Speech y GPT Realtime Translate.
 - El repositorio, el ejecutable y el ZIP no contienen claves ni configuración. `.gitignore` excluye `settings.json`, `secrets\` y `.env`.
 - Las credenciales cifradas con DPAPI solo puede descifrarlas tu usuario de Windows en este equipo. En otro equipo hay que volver a escribir la clave.
 - La carpeta de datos se puede redirigir con la variable de entorno `TRADUCTORVOZTEAMS_DATA_DIR`. Se usa en pruebas.
+
+## Próximamente
+
+- Traducción multi-idioma.
+- Opción de descargar las transcripciones de las reuniones.
+
+## Licencia
+
+Este proyecto es open source, bajo licencia [MIT](LICENSE). Podés usarlo, copiarlo, modificarlo y compartirlo con esa licencia; el texto completo está en [LICENSE](LICENSE).
+
+Si lo usás, si encontrás un error o se te ocurre una mejora, abrí un issue: las contribuciones se agradecen un montón.
